@@ -65,9 +65,9 @@ public class Atividade02_gabriell_avila_lima {
         //double r,d,d_c,t_r;
         
         //System.out.println("Digite um valor em real:");
-       // r = entrada.nextDouble(); 
+        //r = entrada.nextDouble(); 
         
-       //d = 5.32;
+        //d = 5.32;
         
         //d_c = (int)(r/d);
         //System.out.println("Com essa quantia em reais, você pode comprar:" + d_c);
@@ -76,4 +76,5 @@ public class Atividade02_gabriell_avila_lima {
         //System.out.println("Troco em reais:"+ t_r);
     }
 }
+
 
