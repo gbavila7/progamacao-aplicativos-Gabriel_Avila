@@ -59,19 +59,21 @@ public class Atividade02_gabriell_avila_lima {
         
         //hipotenusa = Math.sqrt(Math.pow(cateto1, 2)+ Math.pow(cateto2, 2));
         //System.out.print("O resultado é: %.3f", hipotenusa);
+
+        //4
+        //Scanner entrada = new Scanner(System.in);
+        //double r,d,d_c,t_r;
         
-        Scanner entrada = new Scanner(System.in);
-        double r,d,d_c,t_r;
+        //System.out.println("Digite um valor em real:");
+       // r = entrada.nextDouble(); 
         
-        System.out.println("Digite um valor em real:");
-        r = entrada.nextDouble(); 
+       //d = 5.32;
         
-        d = 5.32;
-        
-        d_c = (int)(r/d);
-        System.out.println("Com essa quantia em reais, você pode comprar:" + d_c);
+        //d_c = (int)(r/d);
+        //System.out.println("Com essa quantia em reais, você pode comprar:" + d_c);
       
-        t_r = r - (d_c * d);
-        System.out.println("Troco em reais:"+ t_r);
+        //t_r = r - (d_c * d);
+        //System.out.println("Troco em reais:"+ t_r);
     }
 }
+
