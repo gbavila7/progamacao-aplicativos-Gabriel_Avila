@@ -114,24 +114,13 @@ public class Atividade02_gabriell_avila_lima {
         
         //calc = Math.sqrt(Math.pow((x2-x1), 2)) + (Math.pow((y1-y2), 2));
         
-        //System.out.println("A distância euclediana é:" +calc);
+        //System.out.println("A distância euclediana é:" +calc)
         
         //8
         //Scanner entrada = new Scanner(System.in);
         //double n1,n2,n3,media,soma,dif;
         
-        //n1 = entrada.nextDouble();        //7
-        //Scanner entrada = new Scanner(System.in);
-        //double x1,x2,y1,y2,calc;
-        
-        //x1 = entrada.nextDouble();
-        //x2 = entrada.nextDouble();
-        //y1 = entrada.nextDouble();
-        //y2 = entrada.nextDouble();
-        
-        //calc = Math.sqrt(Math.pow((x2-x1), 2)) + (Math.pow((y1-y2), 2));
-        
-        //System.out.println("A distância euclediana é:" +calc);
+        //n1 = entrada.nextDouble();
         //n2 = entrada.nextDouble();
         //n3 = entrada.nextDouble();
         
