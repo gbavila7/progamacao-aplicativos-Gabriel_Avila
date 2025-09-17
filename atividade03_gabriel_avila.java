@@ -142,11 +142,27 @@ public class Atividade03_gabriel_avilaJava {
         //System.out.print("Equação: y = "+m+ "x "+b);
         
         //9
+        //Scanner entrada = new Scanner(System.in);  
+        //double m1,b1,m2,b2,x,y;
         
+        //System.out.print("Digite um valor para m1:");
+        //m1 = entrada.nextDouble();
         
+        //System.out.print("Digite um valor para b1:");
+        //b1 = entrada.nextDouble();
         
+        //System.out.print("Digite um valor para m2:");
+        //m2 = entrada.nextDouble();
         
-         
+        //System.out.print("Digite um valor para b2:");
+        //b2 = entrada.nextDouble();
+        
+        //x = (b2-b1)/(m1-m2);
+        //y = m1*x+b1;
+        
+        //System.out.print("Valor de (x,y): ("+x+","+y+")");
+        
+       
         
     }   
 }
