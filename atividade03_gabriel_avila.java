@@ -162,7 +162,27 @@ public class Atividade03_gabriel_avilaJava {
         
         //System.out.print("Valor de (x,y): ("+x+","+y+")");
         
-       
+        //10
+        //Scanner entrada = new Scanner(System.in);
+        //double a,b,c,x1,x2,delta;
         
+        //System.out.print("Valor de a:");
+        //a = entrada.nextInt();
+        
+        //System.out.print("Valor de b:");
+        //b = entrada.nextInt();
+        
+        //System.out.print("Valor de c:");
+        //c = entrada.nextInt();
+        
+        //delta = (Math.pow(b,2)) - (4*a*c);
+        //x1 = (-b + Math.sqrt(delta)/(2*a));
+        //x2 = (-b - Math.sqrt(delta)/(2*a));
+        
+        //System.out.print("Valor de x1:"+x1);
+        //System.out.print("Valor de x2:"+x2);
+        
+        //11
+        Scanner entrada = new Scanner(System.in);
     }   
 }
