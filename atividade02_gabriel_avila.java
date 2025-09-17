@@ -131,5 +131,36 @@ public class Atividade02_gabriell_avila_lima {
         //System.out.println("A média é:"+media);
         //System.out.println("A soma dos valores absolutos é:"+soma);
         //System.out.println("A maior diferença é:"+dif);
+        
+        //9
+        //Scanner entrada = new Scanner(System.in);
+        //int a,b,c;
+        //double x1,x2,delta;
+        
+        //System.out.println("Insira o valor de a:");
+        //a = entrada.nextInt();
+        
+        //System.out.println("Insira o valor de b:");
+        //b = entrada.nextInt();
+        
+        //System.out.println("Insira o valor de c:");
+        //c = entrada.nextInt();
+        
+        //delta = Math.sqrt((Math.pow(b,2)) - (4*a*c));
+        //x1 = ((0-b)+delta)/(2*a);
+        //x2 = ((0-b)-delta)/(2*a);
+        
+        //System.out.println("O valor de x1 é:"+x1);
+        //System.out.println("O valor de x2 é:"+x2);
+        
+        //10
+        //Scanner entrada = new Scanner(System.in);
+        //double far,cel;
+        
+        //System.out.println("Digite o valor em Fahrenheit F:");
+        //far = entrada.nextDouble();
+        
+        //cel = (far-32)/1.0;
+        //System.out.println("O valor de F "+far+" em Fahrenheit é equivalente a C "+cel);
     }
 }
