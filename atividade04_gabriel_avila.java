@@ -199,8 +199,108 @@ public class Atividade04_gabriel_avila {
         //}
         
         //10
-        Scanner entrada = new Scanner(System.in);
+        //Scanner entrada = new Scanner(System.in);
+        //double maca1,maca2,compra,total_compra1,total_compra2;
         
+        //maca1 = 0.30;
+        //maca2 = 0.25;
+        
+        //System.out.print("Digite quantas maçãs você vai comprar:");
+        //compra = entrada.nextDouble();
+        
+        //total_compra1 = compra*0.30;
+        //total_compra2 = compra*0.25;
+        
+        //if (compra<12) {
+        //    System.out.print("Valor total da compra:"+total_compra1);
+        //}
+        
+        //else {
+        //    System.out.print("Valor total da compra:"+total_compra2);  
+        //}
+        
+        //11
+        //Scanner entrada = new Scanner(System.in);
+        //double altura,sexo,calcM,calcF;
+        
+        //System.out.print("Insira sua altura:");
+        //altura = entrada.nextDouble();
+        
+        //System.out.print("Insira seu sexo, 1 = feminino e 2 = masculino:");
+        //sexo = entrada.nextDouble();
+        
+        //calcM = (72.7*altura)-58;
+        //calcF = (62.1*altura)-44.7;
+        
+        //if (sexo==1) {
+        //    System.out.print("Seu peso ideal é:"+calcF);
+        //}
+        
+        //if (sexo==2) {
+        //    System.out.print("Seu peso ideal é:"+calcM);
+        //}
+    
+        //12
+        //Scanner entrada = new Scanner(System.in);
+        //int diaSemana;
+        
+        //System.out.print("Digite um número de 1 a 7:");
+        //diaSemana = entrada.nextInt();
+        
+        //switch (diaSemana) {
+        //    case 1 -> System.out.print("Domingo: Final de semana");
+        //    case 2 -> System.out.print("Segunda-feira: Útil");
+        //    case 3 -> System.out.print("Terça-feira: Útil");
+        //    case 4 -> System.out.print("Quarta-feira: Útil");
+        //    case 5 -> System.out.print("Quinta-feira: Útil");
+        //    case 6 -> System.out.print("Sexta-feira: Útil");
+        //    case 7 -> System.out.print("Sábado: Final de semana");
+        //}
+        
+        //if (diaSemana>7) {
+        //    System.out.print("Inválido.");
+        //}
+          
+        //13
+        //Scanner entrada = new Scanner(System.in);
+        //int cod;
+        
+        //System.out.print("Digite o código identificador:");
+        //cod = entrada.nextInt();
+        
+        //switch (cod) {
+        //    case 100 -> System.out.print("Valor unitário do Detergente: R$1.59");
+        //    case 101 -> System.out.print("Valor unitário da Esponja: R$4.59");
+        //    case 102 -> System.out.print("Valor unitário da Lã de aço: R$1.79");
+        //}
+        
+        //14
+        //Scanner entrada = new Scanner(System.in);
+        //double num1,num2;
+        //int operacao;
+        
+        //System.out.print("Insira o operando 1:");
+        //num1 = entrada.nextDouble();
+        
+        //System.out.print("Insira o operando 2:");
+        //num2 = entrada.nextDouble();   
+        
+        //System.out.print("Qual operação deseja fazer? (1 - Soma, 2 - Subtração, 3 - Mult., 4 - Divisão):");
+        //operacao = entrada.nextInt();
+                
+        //switch (operacao){
+        //    case 1 ->  System.out.print("Resultado da soma:"+(num1+num2));
+        //    case 2 ->  System.out.print("Resultado da subtração:"+(num1-num2));
+        //    case 3 ->  System.out.print("Resultado da multiplicação:"+(num1*num2));
+        //    case 4 -> {  
+        //        if (num2==0){
+        //            System.out.print("Erro: divisão por zero não existe.");
+        //        } 
+        //        else {
+        //            System.out.print("Resultado da divisão:"+(num1/num2));
+        //        }
+        //    }
+        //}    
     }
     
-}
+ }
