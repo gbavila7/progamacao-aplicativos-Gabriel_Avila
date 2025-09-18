@@ -167,13 +167,13 @@ public class Atividade03_gabriel_avilaJava {
         //double a,b,c,x1,x2,delta;
         
         //System.out.print("Valor de a:");
-        //a = entrada.nextInt();
+        //a = entrada.nextDouble();
         
         //System.out.print("Valor de b:");
-        //b = entrada.nextInt();
+        //b = entrada.nextDouble();
         
         //System.out.print("Valor de c:");
-        //c = entrada.nextInt();
+        //c = entrada.nextDouble();
         
         //delta = (Math.pow(b,2)) - (4*a*c);
         //x1 = (-b + Math.sqrt(delta)/(2*a));
@@ -183,6 +183,61 @@ public class Atividade03_gabriel_avilaJava {
         //System.out.print("Valor de x2:"+x2);
         
         //11
-        Scanner entrada = new Scanner(System.in);
+        //Scanner entrada = new Scanner(System.in);
+        //double a,delta,d;
+        
+        //System.out.print("Valor de a:");
+        //a = entrada.nextDouble();
+        
+        //System.out.print("Valor de delta:");
+        //delta = entrada.nextDouble();
+        
+        //d = Math.abs((Math.sqrt(delta))/a);
+        
+        //System.out.print("Valor de d:"+d);
+        
+        //12
+        //Scanner entrada = new Scanner(System.in);
+        //double a,b,c,x0,f,f1;
+        
+        //System.out.print("Valor de a:");
+        //a = entrada.nextDouble();
+        
+        //System.out.print("Valor de b:");
+        //b = entrada.nextDouble();
+        
+        //System.out.print("Valor de c:");
+        //c = entrada.nextDouble();
+        
+        //System.out.print("Valor de x0:");
+        //x0 = entrada.nextDouble();
+        
+        //f = a*(Math.pow(x0,2))+b*x0+c;
+        //f1 = 2*a*x0+b;
+        
+        //System.out.print("Valor de f:"+f);
+        //System.out.print("Valor de f1:"+f1);
+        
+        //13
+        //Scanner entrada = new Scanner(System.in);
+        //double m,b,x1,x2,y1,y2,A;
+        
+        //System.out.print("Valor de m:");
+        //m = entrada.nextDouble();
+        
+        //System.out.print("Valor de b:");
+        //b = entrada.nextDouble();
+        
+        //System.out.print("Valor de x1:");
+        //x1 = entrada.nextDouble();
+        
+        //System.out.print("Valor de x2:");
+        //x2 = entrada.nextDouble();   
+        
+        //y1 = m*x1+b;
+        //y2 = m*x2+b;
+        //A = ((y1+y2)/2)*(x2-x1);
+        
+        //System.out.print("Valor de A:"+A);       
     }   
 }
