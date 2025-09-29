@@ -6,6 +6,7 @@ package atividade06_gabriel_avila;
 import java.util.Scanner;
 import java.lang.Math; 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -89,31 +90,73 @@ public class Atividade06_gabriel_avila {
         }while(n<=0 || repetir.equals("s"));*/
         
         //5
-        int t_max,restantes,t_feitas;
-        String tentativa;
-        String senhaC = "senai123";
+        //int t_max,restantes,t_feitas;
+       // String tentativa;
+        //String senhaC = "senai123";
         
-        t_feitas = 0;
-        t_max = 3;
+        //t_feitas = 0;
+        //t_max = 3;
         
-        do {
-            System.out.print("Insira a senha:");
-            tentativa = entrada.nextLine();
+        //do {
+          //  System.out.print("Insira a senha:");
+          //  tentativa = entrada.nextLine();
             
-            if (tentativa.equals(senhaC)) {
-                System.out.print("A senha está correta, acesso concedido!");
-            }else{
-                t_feitas++;
-                restantes = t_max - t_feitas;
+           // if (tentativa.equals(senhaC)) {
+          //      System.out.print("A senha está correta, acesso concedido!");
+          //  }else{
+          //      t_feitas++;
+          //      restantes = t_max - t_feitas;
                 
-                if (restantes > 0) {
-                    System.out.print("Incorreta. Tentativas restantes:" +restantes);
-                }else{
-                    System.out.print("Acesso bloqueado.");
-                }
+          //      if (restantes > 0) {
+            //        System.out.print("Incorreta. Tentativas restantes:" +restantes);
+          //      }else{
+            //        System.out.print("Acesso bloqueado.");
+          //      }
                 
-            }
-        }while(t_feitas<t_max);
-    }
-    
-}
+       //     }
+      //  }while(t_feitas<t_max)
+      
+      //6              
+          //    System.out.print("digite o número para ver a tabuada:");
+          //   int n = entrada.nextInt();
+              
+          //    for (int i = 1; i <= 10; i++){
+          //        System.out.println(n + "x" + i + "=" + (n * i));
+              //}
+            //entrada.close();
+            
+            
+            //7
+            
+         //  int n = entrada.nextInt();
+         //  int somapares = 0;
+         //  int somaimpares = 0;
+           
+         //  for (int i = 1; i <= n; i++){
+         //      if (i % 2 == 0){
+         //          somapares += i;
+         //      } else {
+         //          somaimpares += i;
+         //      }
+          // }
+           
+         // System.out.println("soma dos pares:" + somapares);
+         // System.out.println("soma dos impares:" + somaimpares);
+          
+          //entrada.close();
+           
+          
+          //8
+          //int N;
+          //System.out.print("digite um número maior que 1:")
+                  //n = en.nextInt();
+                  //if (n<=1){
+                 //     System.out.print("número inválido!");
+                  //}else{
+                    //  for (int i = 1; i <= n; i++) {
+                   //   System.out.println(i);
+                 // }
+      //  }
+
+      //  en.close();
+   // }
