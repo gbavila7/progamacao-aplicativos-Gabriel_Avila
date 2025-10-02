@@ -2,20 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package projeto_gabriel_avila;
+package desafio_1;
 
 import java.util.Scanner;
 import java.util.Random;
 
-public class Projeto_gabriel_avila {
+public class Desafio_1 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         Random random = new Random();
 
-        String voltar;
+        String voltar, simular, s_n;
         int opcao, i_extrato = 0, parcelas, numero_aleatorio;
-        double saldo_atual = 100.00, saldo_dolar = 0.00, deposito, emprestimo, salario_bruto, calc_parcela_juros;
+        double saldo_atual = 100.00, saldo_dolar = 0.00, deposito, emprestimo, salario_bruto, calc_parcela_juros, cotacao, quantidade;
         double valor_total, juros = 0.02, valor_parcela, calc_parcela, valor_total_juros, porcentagem_salario_bruto;
         String[]descricao = new String[10];
         Double[]valores = new Double[10];
@@ -25,7 +25,8 @@ public class Projeto_gabriel_avila {
             System.out.println("1 - Saldo");
             System.out.println("2 - Depósito");
             System.out.println("3 - Extrato");
-            System.out.println("4 - Empréstimo");
+            System.out.println("4 - Simular Empréstimo");
+            System.out.println("5 - Comprar Dólar");
             System.out.println("0 - Sair");
 
             System.out.print("Digite uma opção: ");
@@ -157,12 +158,66 @@ public class Projeto_gabriel_avila {
                         }
                     
                     break;
+                
+                case 5:
+                    cotacao = 5.32;
+                    do{
+                        System.out.println("Saldo disponível em reais: "+saldo_atual);
+                        System.out.print("Quantos dólares deseja comprar (US$)? ");
+                        quantidade = entrada.nextDouble();
+                        entrada.nextLine();
+                        System.out.println("Custo em reais: "+quantidade * cotacao);
+
+                        if ((quantidade*cotacao) > saldo_atual) {
+                            System.out.println("Seu saldo é insuficiente.");
+                        } else {
+                            saldo_atual -= quantidade * cotacao;
+                            saldo_dolar += quantidade;
+                            System.out.print("Confirmar compra (s/n)?");
+                            s_n = entrada.nextLine().toLowerCase();
+                            
+                            if (s_n.equals("s")) {
+                                saldo_atual -= quantidade * cotacao; 
+                                System.out.println("Compra realizada com sucesso.");
+                                System.out.println("Novo saldo:");
+                                System.out.println("- Reais: R$"+String.format("%.2f", saldo_atual));
+                                System.out.println("- Dólares: US$"+quantidade);
+                                
+                                double valor_compra = quantidade * cotacao;
+                                if (i_extrato < 10) {
+                                    descricao[i_extrato] = "Compra de Dólar";
+                                    valores[i_extrato] = valor_compra;
+                                    i_extrato++;
+                                } else {
+                                    for (int i = 1; i < 10; i++) {
+                                        descricao[i - 1] = descricao[i];
+                                        valores[i - 1] = valores[i];
+                                    }
+                                    descricao[9] = "Compra de Dólar";
+                                    valores[9] = valor_compra;
+                                }
+                            }else {
+                                System.out.println("Operação cancelada.");
+                            }
+                        }                   
+                            
+                        System.out.print("Deseja simular novamente (R), voltar ao menu (V) ou encerrar o programa (E)?");
+                        simular = entrada.nextLine().toUpperCase();
+
+                     } while (simular.equals("R"));
+
+                        if (simular.equals("E")) {
+                            opcao = 0;
+                        }
+                        
+                        break;
                     
                 case 0:
                     System.out.println("Encerrando o atendimento. Obrigado por utilizar o Caixa rápido.");
-                    break;
+
             }
 
         } while (opcao != 0);
     }
 }
+
