@@ -5,18 +5,21 @@
 package projeto_gabriel_avila;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Projeto_gabriel_avila {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+        Random random = new Random();
 
         String voltar;
-        int opcao, i_extrato = 0, parcelas;
-        double saldo_atual = 100.00, saldo_dolar = 0.00, deposito, emprestimo, salario_bruto;
+        int opcao, i_extrato = 0, parcelas, numero_aleatorio;
+        double saldo_atual = 100.00, saldo_dolar = 0.00, deposito, emprestimo, salario_bruto, calc_parcela_juros;
+        double valor_total, juros = 0.02, valor_parcela, calc_parcela, valor_total_juros, porcentagem_salario_bruto;
         String[]descricao = new String[10];
         Double[]valores = new Double[10];
-
+        
         do {
             System.out.println("===== CAIXA RÁPIDO =====");
             System.out.println("1 - Saldo");
@@ -93,22 +96,67 @@ public class Projeto_gabriel_avila {
                     System.out.print("Informe o valor do empréstimo (R$): R$");
                     emprestimo = entrada.nextDouble();
                     
-                    while (emprestimo < 200.00 || emprestimo > 100000.00) {
-                        System.out.println("O valor do empréstimo deve ser maior que R$200,00 e menor que R$100.000,00.");
-                        System.out.print("Informe o valor do empréstimo (R$): R$");
-                        emprestimo = entrada.nextDouble();
-                    }
+                        while (emprestimo < 200.00 || emprestimo > 100000.00) {
+                            System.out.println("O valor do empréstimo deve ser maior que R$200,00 e menor que R$100.000,00.");
+                            System.out.print("Informe o valor do empréstimo (R$): R$");
+                            emprestimo = entrada.nextDouble();
+                        }
                     
                     System.out.print("Informe o seu salário bruto (R$): R$");
                     salario_bruto = entrada.nextDouble();
                     
-                    if (salario_bruto <= 0.00) {
-                        System.out.print("Valor inválido. Insira um valor maior que R$0,00:");
-                        salario_bruto = entrada.nextDouble();
-                    }
+                        while (salario_bruto <= 0) {
+                            System.out.print("Valor inválido. Insira um valor maior que R$0,00: ");
+                            salario_bruto = entrada.nextDouble();        
+                        }
                     
-                    System.out.print("Quantidade de parcelas (6, 12, 18, 24, 30, 36, 40, 48, 56, 60 ou 72");
+                    System.out.print("Quantidade de parcelas (6, 12, 18, 24, 30, 36, 40, 48, 56, 60 ou 72): ");
                     parcelas = entrada.nextInt();
+                    entrada.nextLine(); 
+
+                        while (
+                            parcelas != 6  && parcelas != 12 && parcelas != 18 && parcelas != 24 &&
+                            parcelas != 30 && parcelas != 36 && parcelas != 40 && parcelas != 48 &&
+                            parcelas != 56 && parcelas != 60 && parcelas != 72
+                        ) {
+                            System.out.println("Número de parcelas inválido.");
+                            System.out.print("Digite um dos seguintes valores: 6, 12, 18, 24, 30, 36, 40, 48, 56, 60 ou 72: ");
+
+                            while (!entrada.hasNextInt()) {
+                                System.out.println("Entrada inválida. Digite um número inteiro.");
+                                System.out.print("Quantidade de parcelas: ");
+                            }
+
+                            parcelas = entrada.nextInt();
+                            entrada.nextLine(); 
+                            }
+                    
+                    calc_parcela = emprestimo/parcelas;
+                    calc_parcela_juros = emprestimo/parcelas*juros;
+                    valor_parcela = calc_parcela;
+                    valor_total = emprestimo*juros;
+                    valor_total_juros = emprestimo*juros+emprestimo;
+                    porcentagem_salario_bruto = 0.3*salario_bruto;
+                    
+                    System.out.println("Valor da parcela: R$"+String.format("%.2f",calc_parcela+calc_parcela_juros)+" x "+parcelas);
+                    System.out.println("Valor do empréstimo: R$"+emprestimo);
+                    System.out.println("Valor total do empréstimo a ser pago: R$"+valor_total_juros);
+                    
+                    if ((calc_parcela + calc_parcela_juros) <= (0.3 * salario_bruto)) {
+                        numero_aleatorio = random.nextInt(100000);
+                        System.out.println("Empréstimo disponível!");
+                        System.out.println("Entre em contato com a central e informe o número de protocolo EM"+numero_aleatorio);
+                        System.out.println("Deseja voltar ao menu (V) ou encerrar o programa (E)? ");
+                        voltar = entrada.nextLine().toUpperCase();
+
+                         if (voltar.equals("E")) {
+                          opcao = 0;
+                         } 
+                        } else {
+                            System.out.println("Empréstimo indisponível! O valor da parcela não pode ultrapassar o valor de R$"+porcentagem_salario_bruto+".");
+                        }
+                    
+                    break;
                     
                 case 0:
                     System.out.println("Encerrando o atendimento. Obrigado por utilizar o Caixa rápido.");
