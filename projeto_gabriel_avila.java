@@ -21,7 +21,7 @@ public class Projeto_gabriel_avila {
         Double[]valores = new Double[10];
         
         do {
-            System.out.println("===== CAIXA RÁPIDO =====");
+            System.out.println("\n===== CAIXA RÁPIDO =====\n");
             System.out.println("1 - Saldo");
             System.out.println("2 - Depósito");
             System.out.println("3 - Extrato");
@@ -29,13 +29,13 @@ public class Projeto_gabriel_avila {
             System.out.println("5 - Comprar Dólar");
             System.out.println("0 - Sair");
 
-            System.out.print("Digite uma opção: ");
+            System.out.print("\nDigite uma opção: ");
             opcao = entrada.nextInt();
             entrada.nextLine();
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Saldo em reais: R$ " + saldo_atual);
+                    System.out.println("\nSaldo em reais: R$ " + saldo_atual);
                     System.out.println("Saldo em dólares: US$ " + saldo_dolar);
                     System.out.print("Deseja voltar ao menu (V) ou encerrar o programa (E)? ");
                     voltar = entrada.nextLine().toUpperCase();
@@ -46,7 +46,7 @@ public class Projeto_gabriel_avila {
                     break;
 
                 case 2:
-                    System.out.print("Informe o valor do depósito (em reais): R$ ");
+                    System.out.print("\nInforme o valor do depósito (em reais): R$ ");
                     deposito = entrada.nextDouble();
                     entrada.nextLine();
 
@@ -79,7 +79,7 @@ public class Projeto_gabriel_avila {
 
                 case 3:
                     if (i_extrato == 0) {
-                        System.out.println("Nenhuma movimentação registrada.");
+                        System.out.println("\nNenhuma movimentação registrada.");
                     } else {
                         for (int i = 0; i < i_extrato; i++) {
                             System.out.println((i + 1) + " - " + descricao[i]);
@@ -94,7 +94,7 @@ public class Projeto_gabriel_avila {
                     break;
            
                 case 4:
-                    System.out.print("Informe o valor do empréstimo (R$): R$");
+                    System.out.print("\nInforme o valor do empréstimo (R$): R$");
                     emprestimo = entrada.nextDouble();
                     
                         while (emprestimo < 200.00 || emprestimo > 100000.00) {
@@ -139,13 +139,13 @@ public class Projeto_gabriel_avila {
                     valor_total_juros = emprestimo*juros+emprestimo;
                     porcentagem_salario_bruto = 0.3*salario_bruto;
                     
-                    System.out.println("Valor da parcela: R$"+String.format("%.2f",calc_parcela+calc_parcela_juros)+" x "+parcelas);
+                    System.out.println("\nValor da parcela: R$"+String.format("%.2f",calc_parcela+calc_parcela_juros)+" x "+parcelas);
                     System.out.println("Valor do empréstimo: R$"+emprestimo);
                     System.out.println("Valor total do empréstimo a ser pago: R$"+valor_total_juros);
                     
                     if ((calc_parcela + calc_parcela_juros) <= (0.3 * salario_bruto)) {
                         numero_aleatorio = random.nextInt(100000);
-                        System.out.println("Empréstimo disponível!");
+                        System.out.println("\nEmpréstimo disponível!");
                         System.out.println("Entre em contato com a central e informe o número de protocolo EM"+numero_aleatorio);
                         System.out.println("Deseja voltar ao menu (V) ou encerrar o programa (E)? ");
                         voltar = entrada.nextLine().toUpperCase();
@@ -162,7 +162,7 @@ public class Projeto_gabriel_avila {
                 case 5:
                     cotacao = 5.32;
                     do{
-                        System.out.println("Saldo disponível em reais: "+saldo_atual);
+                        System.out.println("\nSaldo disponível em reais: "+saldo_atual);
                         System.out.print("Quantos dólares deseja comprar (US$)? ");
                         quantidade = entrada.nextDouble();
                         entrada.nextLine();
@@ -178,7 +178,7 @@ public class Projeto_gabriel_avila {
                                 saldo_atual -= quantidade * cotacao; 
                                 saldo_dolar += quantidade;                                
                                 System.out.println("Compra realizada com sucesso.");
-                                System.out.println("Novo saldo:");
+                                System.out.println("\nNovo saldo:");
                                 System.out.println("- Reais: R$"+String.format("%.2f", saldo_atual));
                                 System.out.println("- Dólares: US$"+quantidade);
                                 
