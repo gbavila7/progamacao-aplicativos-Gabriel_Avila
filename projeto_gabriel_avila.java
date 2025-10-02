@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package desafio_1;
+package projeto_gabriel_avila;
 
 import java.util.Scanner;
 import java.util.Random;
 
-public class Desafio_1 {
+public class Projeto_gabriel_avila {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -82,7 +82,7 @@ public class Desafio_1 {
                         System.out.println("Nenhuma movimentação registrada.");
                     } else {
                         for (int i = 0; i < i_extrato; i++) {
-                            System.out.println((i + 1) + " - " + descricao[i] + ": R$ " + String.format("%.2f", valores[i]));
+                            System.out.println((i + 1) + " - " + descricao[i]);
                         }
                     }
 
@@ -171,13 +171,12 @@ public class Desafio_1 {
                         if ((quantidade*cotacao) > saldo_atual) {
                             System.out.println("Seu saldo é insuficiente.");
                         } else {
-                            saldo_atual -= quantidade * cotacao;
-                            saldo_dolar += quantidade;
                             System.out.print("Confirmar compra (s/n)?");
                             s_n = entrada.nextLine().toLowerCase();
                             
                             if (s_n.equals("s")) {
                                 saldo_atual -= quantidade * cotacao; 
+                                saldo_dolar += quantidade;                                
                                 System.out.println("Compra realizada com sucesso.");
                                 System.out.println("Novo saldo:");
                                 System.out.println("- Reais: R$"+String.format("%.2f", saldo_atual));
@@ -185,7 +184,7 @@ public class Desafio_1 {
                                 
                                 double valor_compra = quantidade * cotacao;
                                 if (i_extrato < 10) {
-                                    descricao[i_extrato] = "Compra de Dólar";
+                                    descricao[i_extrato] = "Compra de Dólar: - R$" + String.format("%.2f", valor_compra) + " | US$" + quantidade;;
                                     valores[i_extrato] = valor_compra;
                                     i_extrato++;
                                 } else {
@@ -193,7 +192,7 @@ public class Desafio_1 {
                                         descricao[i - 1] = descricao[i];
                                         valores[i - 1] = valores[i];
                                     }
-                                    descricao[9] = "Compra de Dólar";
+                                    descricao[9] = "Compra de Dólar: - R$" + String.format("%.2f", valor_compra) + " | US$" + quantidade;
                                     valores[9] = valor_compra;
                                 }
                             }else {
@@ -220,4 +219,3 @@ public class Desafio_1 {
         } while (opcao != 0);
     }
 }
-
