@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package projeto_gabriel_avila;
+package desafio_1;
 
 import java.util.Scanner;
 import java.util.Random;
 
-public class Projeto_gabriel_avila {
+public class Desafio_1 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -82,7 +82,8 @@ public class Projeto_gabriel_avila {
                         System.out.println("\nNenhuma movimentação registrada.");
                     } else {
                         for (int i = 0; i < i_extrato; i++) {
-                            System.out.println((i + 1) + " - " + descricao[i]);
+                            System.out.println((i + 1) + " - " + descricao[i] + " | Valor: R$" + String.format("%.2f", valores[i]));
+                            
                         }
                     }
 
@@ -219,3 +220,4 @@ public class Projeto_gabriel_avila {
         } while (opcao != 0);
     }
 }
+
