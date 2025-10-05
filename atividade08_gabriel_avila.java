@@ -31,6 +31,55 @@ public class Atividade08_gabriel_avila {
     public double divisao(int a,int b) {
         return a/b;
     }*/    
+    
+    //3
+    //a
+    /*public String mes (int n) {
+        return switch (n) {
+            case 1 -> "Janeiro";
+            case 2 -> "Fevereiro";
+            case 3 -> "Março";
+            case 4 -> "Abril";
+            case 5 -> "Maio";
+            case 6 -> "Junho";
+            case 7 -> "Julho";
+            case 8 -> "Agosto";
+            case 9 -> "Setembro";
+            case 10 -> "Outubro";
+            case 11 -> "Novembro";
+            case 12 -> "Dezembro";
+            default -> "Mês inválido";
+        }*/
+    
+    //b
+        /*String[] mesExtenso = new String[12];
+        mesExtenso[0] = "Janeiro";
+        mesExtenso[1] = "Fevereiro";
+        mesExtenso[2] = "Março";
+        mesExtenso[3] = "Abril";
+        mesExtenso[4] = "Maio";
+        mesExtenso[5] = "Junho";
+        mesExtenso[6] = "Julho";
+        mesExtenso[7] = "Agosto";
+        mesExtenso[8] = "Setembro";
+        mesExtenso[9] = "Outubro";
+        mesExtenso[10] = "Novembro";
+        mesExtenso[11] = "Dezembro";
+        
+        if (n >= 1 && n <= 12) {
+            return mesExtenso[n-1];
+        }else{
+            return "Mês inválido";
+        }
+    }*/
+    
+    //4
+    /*public void fun(int n, String salario) {
+     for (int i = 0; i < n; i++) {
+         System.out.println("- Funcionário "+ (i+1) + ": "+ salario );
+     }*/
+ }
+    
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -85,10 +134,33 @@ public class Atividade08_gabriel_avila {
                 
             case 0:
                 System.out.print("Encerrando o sistema.");
+         }*/
         
-        //3
+        //3:
+        /*System.out.print("Insira um número: ");
+        int n = entrada.nextInt();
+
+        Atividade08_gabriel_avila objeto = new Atividade08_gabriel_avila();
+        String mesExtenso = objeto.mes(n);
         
+        System.out.println("Mês correspondente: " + mesExtenso);*/
+        
+        //4
+        /*int salario = 1800;
+
+        System.out.print("Insira o número de funcionários: ");
+        int n = entrada.nextInt();
+        
+        double media = 1800*n/n;
+        
+        Atividade08_gabriel_avila objeto = new Atividade08_gabriel_avila();
+        objeto.fun(n, "1800");
+        
+        if (salario > media) {
+            System.out.print("Salários maiores que a média: ");
+        }else {
+            System.out.print("Nenhum funcionário com o salário maior que a média(Média salarial "+media+":");
         }*/
+        
     }
-    
 }
