@@ -78,7 +78,6 @@ public class Atividade08_gabriel_avila {
      for (int i = 0; i < n; i++) {
          System.out.println("- Funcionário "+ (i+1) + ": "+ salario );
      }*/
- }
     
 
     public static void main(String[] args) {
@@ -161,6 +160,5 @@ public class Atividade08_gabriel_avila {
         }else {
             System.out.print("Nenhum funcionário com o salário maior que a média(Média salarial "+media+":");
         }*/
-        
     }
-}
+ }
