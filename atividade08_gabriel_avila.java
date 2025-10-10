@@ -79,6 +79,26 @@ public class Atividade08_gabriel_avila {
          System.out.println("- Funcionário "+ (i+1) + ": "+ salario );
      }*/
     
+    //5
+    /*public void peso_individuos(double[] pesos, Scanner entrada) {
+        for (int i = 0; i<pesos.length; i++) {
+            pesos[i] = entrada.nextDouble();
+        }
+    }
+    
+    public int menorP(double[] pesos) {
+        int pos = 0;
+        for (int i = 1; i < pesos.length; i++) {
+            if (pesos[i] < pesos[pos]) {
+            pos = i;
+            }
+        }
+        return pos;
+    } */   
+    
+    //6
+    public 
+    
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -160,5 +180,19 @@ public class Atividade08_gabriel_avila {
         }else {
             System.out.print("Nenhum funcionário com o salário maior que a média(Média salarial "+media+":");
         }*/
+        
+        //5
+        /*double[] pesos = new double[10];
+        Atividade08_gabriel_avila obj = new Atividade08_gabriel_avila();
+        
+        System.out.println("Digite os 10 pesos:");
+        obj.peso_individuos(pesos, entrada);
+        
+        int posicaoMenor = obj.menorP(pesos);
+
+        System.out.println("A posição do menor peso é: " + posicaoMenor);*/
+
+        
     }
  }
+
