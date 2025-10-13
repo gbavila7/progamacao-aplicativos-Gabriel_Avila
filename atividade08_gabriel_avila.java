@@ -185,7 +185,7 @@ public class Atividade08_gabriel_avila {
     }*/
     
     //10
-    public class Gabarito {
+    /*public class Gabarito {
     public char respostaQuestao(int nQuestao) {
         return switch (nQuestao) {
             case 1 -> 'A';
@@ -226,7 +226,7 @@ public class Atividade08_gabriel_avila {
             }
         }
         
-        public int Acertos () {
+        public int acertos () {
             int acertos = 0;
             
             for (int i = 0; i<qtdRespondidas; i++) {
@@ -237,10 +237,36 @@ public class Atividade08_gabriel_avila {
             return acertos;
         }
         
-        public double nota (int acertos) {
-            return (acertos/15)*10;
+        public double nota () {
+            double nota = 0;
+            for (int i = 0; i < qtdRespondidas; i++) {
+                if (respostasAluno[i] == gabarito.respostaQuestao(i + 1)) {
+                    if (i < 10) {
+                        nota += 0.5;
+                    } else {
+                        nota += 1.0;
+                    }
+            }
         }
+        return nota;
     }
+        
+        public double maior(Prova outraProva) {
+        double nota1 = this.nota();
+        double nota2 = outraProva.nota();
+
+        if (nota1 > nota2) return nota1;
+        if (nota2 > nota1) return nota2;
+
+        int acertos1 = acertos();
+        int acertos2 = outraProva.acertos();
+
+        if (acertos1 > acertos2) return nota1;
+        if (acertos2 > acertos1) return nota2;
+
+        return nota1;
+    }       
+}*/
     
 
     public static void main(String[] args) {
@@ -428,10 +454,30 @@ public class Atividade08_gabriel_avila {
         System.out.print("A nota necessária é: "+notaFinal);*/
         
         //10
-        Prova prova = new Prova(resposta, );
-        
-        System.out.print("Responda a questão: ");
-        char resposta = entrada.next().charAt(0);
+        /*Atividade08_gabriel_avila app = new Atividade08_gabriel_avila();
+        Gabarito gabarito = app.new Gabarito();
+
+        System.out.println("=== Prova do Aluno 1 ===");
+        Prova p1 = new Prova(gabarito);
+        for (int i = 1; i <= 15; i++) {
+            System.out.print("Resposta da questão " + i + ": ");
+            char resp = entrada.next().charAt(0);
+            p1.respostaAluno(resp);
+        }
+
+        System.out.println("\n=== Prova do Aluno 2 ===");
+        Prova p2 = new Prova(gabarito);
+        for (int i = 1; i <= 15; i++) {
+            System.out.print("Resposta da questão " + i + ": ");
+            char resp = entrada.next().charAt(0);
+            p2.respostaAluno(resp);
+        }
+
+        System.out.println("\nAluno 1 - Acertos: " + p1.acertos() + " | Nota: " + p1.nota());
+        System.out.println("Aluno 2 - Acertos: " + p2.acertos() + " | Nota: " + p2.nota());
+
+        double melhorNota = p1.maior(p2);
+        System.out.println("\nA maior nota foi: " + melhorNota);*/
     }
  }
 
