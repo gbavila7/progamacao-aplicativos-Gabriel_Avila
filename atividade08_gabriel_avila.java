@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package atividade08_gabriel_avila;
-import java.lang.Math;
 import java.util.Scanner;
 /**
  *
@@ -97,7 +96,71 @@ public class Atividade08_gabriel_avila {
     } */   
     
     //6
-    public 
+    /*public void fibonacci(int n){
+        int a = 0, b = 1,c;
+        
+        if (n>=1) {
+            System.out.print(a + " ");
+        }
+        if (n>=2) {
+            System.out.print(b + " ");
+        }
+        
+        for (int i = 3;i <= n;i++){
+            c = a + b;
+            System.out.print(c + " ");
+            a = b;
+            b = c;
+        }
+    }*/
+    
+    //7
+    /*public String buscarNome(String[] nomes, Scanner entrada, String nome_busca) {
+        for (int i = 0; i < nomes.length;i++) {
+            System.out.print("Digite nome " +(i+1)+ ":");
+            nomes[i] = entrada.nextLine(); 
+        }
+        
+        System.out.print("Digite um nome para buscar: ");
+        nome_busca = entrada.nextLine();  
+        
+        for (int i = 0; i < nomes.length;i++) {  
+            if (nome_busca.equalsIgnoreCase(nomes[i])) {
+                return "Nome encontrado:" + nomes[i];
+            }
+        }
+        return "Nome não encontrado.";
+    }*/
+    
+    //8
+    // classe
+   /* public static class Cachorro{
+        //os atributos
+        public String nome_pet;
+        public String raca;
+        public int idade;
+        public String nome_dono;
+        public String contato_dono;
+        
+        //meus métodos
+        
+        public Cachorro(String nome_pet, String raca, int idade, String nome_dono, String contato_dono) {
+            this.nome_pet = nome_pet;
+            this.raca = raca;
+            this.idade = idade;
+            this.nome_dono = nome_dono;
+            this.contato_dono = contato_dono;
+        }
+        
+        public void exibir_dados() {
+            System.out.println("Nome do pet...: "+nome_pet);
+            System.out.println("Raça...:"+raca);
+            System.out.println("Idade...: "+idade);
+            System.out.println("Nome do dono(a)...: "+nome_dono);
+            System.out.println("Contato do dono(a)...: "+contato_dono);
+        }
+    }*/
+        
     
 
     public static void main(String[] args) {
@@ -191,8 +254,75 @@ public class Atividade08_gabriel_avila {
         int posicaoMenor = obj.menorP(pesos);
 
         System.out.println("A posição do menor peso é: " + posicaoMenor);*/
-
         
+        //6
+        /*Atividade08_gabriel_avila obj = new Atividade08_gabriel_avila();
+        
+        System.out.print("Insira um número:");
+        int n = entrada.nextInt();
+                
+        
+        obj.fibonacci(n);*/
+        
+        //7
+        /*String nome_busca = "";
+        String[] nomes = new String[10];
+        
+        Atividade08_gabriel_avila obj = new Atividade08_gabriel_avila();
+        obj.buscarNome(nomes, entrada, nome_busca);*/
+        
+        //8
+        /*String nome_pet, raca, nome_dono, contato_dono;
+        int idade;
+        
+        System.out.println("==== Cadastro Pet Shop Amicão ====");
+        
+        System.out.print("Nome do pet...: ");
+        nome_pet = entrada.nextLine();
+        
+        System.out.print("Raça...:");
+        raca = entrada.nextLine();
+        
+        System.out.print("Idade...: ");
+        idade = entrada.nextInt();
+        entrada.nextLine();
+                
+        System.out.print("Nome do dono(a)...: ");
+        nome_dono = entrada.nextLine();
+        
+        System.out.print("Contato do dono(a)...:: ");
+        contato_dono = entrada.nextLine();
+        
+        System.out.println("-----------------------------");
+        
+        Cachorro cachorro = new Cachorro(nome_pet, raca, idade, nome_dono, contato_dono);
+        cachorro.exibir_dados();
+        
+        System.out.println("=== Menu de serviços ====");
+        System.out.println("1 - Banho");
+        System.out.println("2 - Tosa");
+        System.out.println("3 - Banho e Tosa");
+        System.out.println("4 - Consulta veterinária");
+        System.out.println("Escolha o procedimento desejado: ");
+        int opcao = entrada.nextInt();
+        entrada.nextLine();
+        
+        System.out.println("====== FICHA ATENDIMENTO =====");
+        System.out.println("Nome do pet...: "+nome_pet);
+        System.out.println("Raça...:"+raca);
+        System.out.println("Idade...: "+idade);
+        System.out.println("Nome do dono(a)...: "+nome_dono);
+        System.out.println("Contato do dono(a)...: "+contato_dono);
+        System.out.println("=================================");
+        
+        switch (opcao) {
+            case 1 -> System.out.print("Procedimento: Banho");
+            case 2 -> System.out.print("Procedimento: Tosa");
+            case 3 -> System.out.print("Procedimento: Banho e Tosa");
+            case 4 -> System.out.print("Procedimento: Consulta Veterinária");
+
+        }*/
     }
  }
+
 
