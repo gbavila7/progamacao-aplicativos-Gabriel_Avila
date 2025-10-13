@@ -160,7 +160,87 @@ public class Atividade08_gabriel_avila {
             System.out.println("Contato do dono(a)...: "+contato_dono);
         }
     }*/
+    
+    //9
+    /*public static class Aluno {
+        public int matricula;
+        public String nome;
+        public Double nota_prova1;
+        public Double nota_prova2;
+        public Double nota_trabalho;
         
+        public Double Media(Double nota_prova1, Double nota_prova2, Double nota_trabalho) {
+            double calc = ((nota_prova1*2.5) + (nota_prova2*2.5) + (nota_trabalho * 2))/7;
+            return calc;
+        }
+        
+        public Double Final(Double calc){
+            Double nota_nec = 10-2*calc; 
+            if (calc >= 7) {
+                return 0.0;
+            } else {
+                return nota_nec;
+            }
+        }
+    }*/
+    
+    //10
+    public class Gabarito {
+    public char respostaQuestao(int nQuestao) {
+        return switch (nQuestao) {
+            case 1 -> 'A';
+            case 2 -> 'B';
+            case 3 -> 'D';
+            case 4 -> 'B';
+            case 5 -> 'B';
+            case 6 -> 'B';
+            case 7 -> 'E';
+            case 8 -> 'B';
+            case 9 -> 'D';
+            case 10 -> 'B';
+            case 11 -> 'C';
+            case 12 -> 'E';
+            case 13 -> 'B';
+            case 14 -> 'A';
+            case 15 -> 'A';
+            default -> '?'; 
+        };
+    }
+}
+
+            
+    public static class Prova {
+        public char[] respostasAluno = new char[15];
+        public Gabarito gabarito;
+        public int qtdRespondidas = 0;
+        
+        public Prova (Gabarito gabarito){
+            this.gabarito = gabarito;
+    }
+        public void respostaAluno(char resposta) {
+            if (qtdRespondidas < 15) {
+                respostasAluno[qtdRespondidas] = Character.toUpperCase(resposta);
+                qtdRespondidas++;
+            } else {
+                System.out.println("Todas as questões já foram respondidas!");
+            }
+        }
+        
+        public int Acertos () {
+            int acertos = 0;
+            
+            for (int i = 0; i<qtdRespondidas; i++) {
+                    if (respostasAluno[i] == gabarito.respostaQuestao(i + 1)) {
+                acertos++;
+                }
+            }
+            return acertos;
+        }
+        
+        public double nota (int acertos) {
+            return (acertos/15)*10;
+        }
+    }
     
 
     public static void main(String[] args) {
@@ -322,6 +402,36 @@ public class Atividade08_gabriel_avila {
             case 4 -> System.out.print("Procedimento: Consulta Veterinária");
 
         }*/
+        
+        //9
+        /*Aluno aluno = new Aluno();
+        
+        System.out.print("Insira o número de matrícula: ");
+        aluno.matricula = entrada.nextInt();
+        entrada.nextLine();
+        
+        System.out.print("Insira o nome do aluno: ");
+        aluno.nome = entrada.nextLine();
+        
+        System.out.print("Insira a nota da prova 1: ");
+        aluno.nota_prova1 = entrada.nextDouble();
+        
+        System.out.print("Insira a nota da prova 2: ");
+        aluno.nota_prova2 = entrada.nextDouble();
+        
+        System.out.print("Insira a nota do trabalho: ");
+        aluno.nota_trabalho = entrada.nextDouble();
+        
+        double media = aluno.Media(aluno.nota_prova1, aluno.nota_prova2, aluno.nota_trabalho);
+        double notaFinal = aluno.Final(media);
+        
+        System.out.print("A nota necessária é: "+notaFinal);*/
+        
+        //10
+        Prova prova = new Prova(resposta, );
+        
+        System.out.print("Responda a questão: ");
+        char resposta = entrada.next().charAt(0);
     }
  }
 
