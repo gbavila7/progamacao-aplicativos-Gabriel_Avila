@@ -1,5 +1,7 @@
 package desafio1_2;
+
 import java.util.Scanner;
+import java.util.Random;
 
 public class Desafio1_2 {
     public static class ContaBancaria {
@@ -98,12 +100,12 @@ public class Desafio1_2 {
         }
        
         
-        public Double parcelaFinal (Double emprestimo, int qtd) {
-            return (emprestimo/qtd) * 0.2;
+        public Double parcelaFinal (Double emprestimo, int p) {
+            return (emprestimo/p) * 0.2;
         }
         
-        public Double totalComJuros  (Double emprestimo, int qtd) {
-            return emprestimo + (jurosParcela*qtd);
+        public Double totalComJuros  (Double emprestimo, int p) {
+            return emprestimo + (jurosParcela*p);
         }
     }
     
@@ -114,11 +116,13 @@ public class Desafio1_2 {
         ExtratoBancario extrato = new ExtratoBancario(10);
         ContaBancaria conta = new ContaBancaria(100.0,0.0,extrato);
         ServicoCambio cambio = new ServicoCambio(5.32);
-        SimularEmprestimo simulador = new SimularEmprestimo();
+        SimularEmprestimo simular = new SimularEmprestimo();
         
         Scanner entrada = new Scanner(System.in);
-        int opcao;
-        Double valor;
+        Random random = new Random();
+        
+        int opcao, p = 0, numero_aleatorio;
+        Double valor, emprestimo, salario_bruto;
         String voltar;
         
         do {
@@ -183,16 +187,66 @@ public class Desafio1_2 {
                     break;
            
                 case 4:
+                    System.out.print("\nInforme o valor do empréstimo (R$): R$");
+                    emprestimo = entrada.nextDouble();
                     
-                
+                    while (emprestimo < 200.00 || emprestimo > 100000.00) {
+                            System.out.println("O valor do empréstimo deve ser maior que R$200,00 e menor que R$100.000,00.");
+                            System.out.print("Informe o valor do empréstimo (R$): R$");
+                            emprestimo = entrada.nextDouble();
+                        }
+                    
+                    System.out.print("Informe o seu salário bruto (R$): R$");
+                    salario_bruto = entrada.nextDouble();
+                    
+                        while (salario_bruto <= 0) {
+                            System.out.print("Valor inválido. Insira um valor maior que R$0,00: ");
+                            salario_bruto = entrada.nextDouble();        
+                        }
+                        
+                    do {
+                        System.out.print("Quantidade de parcelas (6, 12, 18, 24, 30, 36, 40, 48, 56, 60 ou 72): ");
+                        while (!entrada.hasNextInt()) {
+                            System.out.println("Entrada inválida. Digite um número inteiro.");
+                            entrada.next(); // consome a entrada inválida
+                        }
+                        p = entrada.nextInt();
+                        entrada.nextLine(); // limpa buffer
+
+                        if (!simular.parcelaValida(p)) {
+                            System.out.println("Número de parcelas inválido.");
+                        }
+                    } while (!simular.parcelaValida(p));    
+                    
+                    System.out.print("\nValor da parcela: R$" + simular.parcelaFinal(emprestimo, p));
+                    System.out.print("\nValor do empréstimo: R$" + emprestimo);
+                    System.out.println("\nValor total do empréstimo a ser pago: R$" + simular.totalComJuros(emprestimo, p));  
+                    
+                    if ((simular.parcelaFinal(emprestimo, p)) <= (0.30 * salario_bruto)) {
+                        numero_aleatorio = random.nextInt(100000);
+                        System.out.println("\nEmpréstimo disponível!");
+                        System.out.println("Entre em contato com a central e informe o número de protocolo EM"+numero_aleatorio);
+                        System.out.print("Deseja voltar ao menu (V) ou encerrar o programa (E)? ");
+                        voltar = entrada.nextLine().toUpperCase();
+
+                        if (voltar.equals("E")) {
+                          opcao = 0;
+                        } 
+                        
+                    } else {
+                        System.out.println("Empréstimo indisponível! O valor da parcela não pode ultrapassar o valor de R$"+ 0.3*salario_bruto +".");
+                    }
+                    
+                    break;
+                        
                 case 5:
                     
                     
                 case 0:
                     System.out.println("Encerrando o atendimento. Obrigado por utilizar o Caixa rápido.");
-
+                    
             }
-
+        
         } while (opcao != 0);
     }
     
