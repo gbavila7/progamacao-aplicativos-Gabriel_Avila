@@ -1,6 +1,6 @@
-package desafio1_2_gabriel_avila;
+package desafio1_2;
 
-public class Desafio1_2_gabriel_avila {
+public class Desafio1_2 {
     public static class ContaBancaria {
         public Double saldo;
         public Double saldo_dolar;
@@ -15,7 +15,8 @@ public class Desafio1_2_gabriel_avila {
         }
         
         public void comprarDolar(Double qtdUsd, Double custoReais) {
-            
+            saldo -= custoReais;
+            saldo_dolar += qtdUsd;
         }
     }
     
@@ -34,6 +35,7 @@ public class Desafio1_2_gabriel_avila {
     public static class Movimentacao {
         public String texto;
         public Double valor;
+        
          public Movimentacao (String texto, Double valor){
              this.texto = texto;
              this.valor= valor;
@@ -45,7 +47,28 @@ public class Desafio1_2_gabriel_avila {
         public int proximo;
         public int i; 
         public Movimentacao[] itens;
+         
+         public ExtratoBancario (int capacidade, Movimentacao[] itens) {
+             this.capacidade = capacidade;
+             this.proximo = 0;
+             this.i = 0;
+             this.itens = new Movimentacao[capacidade];
+        }     
         
+        public void registrar(Movimentacao m) {
+            itens[proximo] = m;
+            proximo = (proximo+1) % capacidade;
+            
+            if (i < capacidade) {
+                i++;
+            }
+        }    
+        
+        public boolean vazio() {
+            return i==0;
+        }
+        
+        public 
     }
     
     public static class SimularEmprestimo {
