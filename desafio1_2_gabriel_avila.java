@@ -1,9 +1,9 @@
-package desafio1_2;
+package desafio1_2_gabriel_avila;
 
 import java.util.Scanner;
 import java.util.Random;
 
-public class Desafio1_2 {
+public class Desafio1_2_gabriel_avila {
     public static class ContaBancaria {
         public Double saldo;
         public Double saldo_dolar;
@@ -122,8 +122,8 @@ public class Desafio1_2 {
         Random random = new Random();
         
         int opcao, p = 0, numero_aleatorio;
-        Double valor, emprestimo, salario_bruto;
-        String voltar;
+        Double valor, emprestimo, salario_bruto, qtdUsd, custoReais;
+        String voltar, fluxo, confirmar, confirmar_saida;
         
         do {
             System.out.println("\n===== CAIXA RÁPIDO =====\n");
@@ -240,11 +240,55 @@ public class Desafio1_2 {
                     break;
                         
                 case 5:
-                    
+                    do{
+                        System.out.println("\nSaldo disponível em reais: "+conta.saldo);
+                        System.out.print("Quantos dólares deseja comprar (US$)? ");
+                        qtdUsd = entrada.nextDouble();
+                        entrada.nextLine();
+                        
+                        custoReais = cambio.custoReais(qtdUsd);
+                        System.out.println("Custo em reais: "+custoReais);
+                        
+                        if (custoReais > conta.saldo) {
+                            System.out.println("Seu saldo é insuficiente.");
+                        } else {
+                            System.out.print("Confirmar compra (s/n)?");
+                            confirmar = entrada.nextLine().toLowerCase();
+                        
+                        
+                            if (confirmar.equals("s")) {
+                                System.out.println("Compra realizada com sucesso.");
+                                System.out.println("\nNovo saldo:");
+                                System.out.println("- Reais: R$"+String.format("%.2f", conta.saldo - custoReais));
+                                System.out.println("- Dólares: US$"+qtdUsd);
+                            
+                                conta.comprarDolar(qtdUsd, custoReais);
+                            }else {
+                                System.out.println("Operação cancelada.");
+                            }
+                        }    
+                        
+                        System.out.print("Deseja simular novamente (R), voltar ao menu (V) ou encerrar o programa (E)?");
+                        fluxo = entrada.nextLine().toUpperCase();
+
+                    } while (fluxo.equals("R"));
+
+                        if (fluxo.equals("E")) {
+                            opcao = 0;
+                        }
+                        
+                        break;
                     
                 case 0:
                     System.out.println("Encerrando o atendimento. Obrigado por utilizar o Caixa rápido.");
+                    System.out.print("Confirmar saída (s/n)?");
+                    confirmar_saida = entrada.nextLine().toLowerCase();
                     
+                    if (confirmar_saida.equals("s")) {
+                        opcao = 0;
+                    }
+ 
+                    break;
             }
         
         } while (opcao != 0);
