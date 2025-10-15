@@ -4,19 +4,24 @@ public class Desafio1_2 {
     public static class ContaBancaria {
         public Double saldo;
         public Double saldo_dolar;
+        public ExtratoBancario extrato;
         
-         public ContaBancaria(Double saldo, Double saldo_dolar) {
+         public ContaBancaria(Double saldo, Double saldo_dolar, ExtratoBancario extrato) {
             this.saldo = saldo;
             this.saldo_dolar = saldo_dolar;
+            this.extrato = extrato;
         }
          
         public void depositar(Double valor) {
             saldo += valor;
+            extrato.registrar(new Movimentacao("Depósito", valor));
         }
         
         public void comprarDolar(Double qtdUsd, Double custoReais) {
             saldo -= custoReais;
             saldo_dolar += qtdUsd;
+            
+            extrato.registrar(new Movimentacao("Compra de Dólar: - R$" + String.format("%.2f", custoReais) + " | US$" + qtdUsd, custoReais));
         }
     }
     
@@ -47,8 +52,10 @@ public class Desafio1_2 {
         public int proximo;
         public int i; 
         public Movimentacao[] itens;
+        public String[] descricao;
+        public Double[] valores;
          
-         public ExtratoBancario (int capacidade, Movimentacao[] itens) {
+         public ExtratoBancario (int capacidade) {
              this.capacidade = capacidade;
              this.proximo = 0;
              this.i = 0;
@@ -68,8 +75,16 @@ public class Desafio1_2 {
             return i==0;
         }
         
-        public 
-    }
+        public void imprimir() {
+            if (vazio()) {
+                System.out.println("\nNenhuma movimentação registrada.");
+            } else {
+                System.out.println("\n=== Extrato Bancário ===");
+                for (int i = 0; i < capacidade; i++) {
+                    System.out.println((i + 1) + " - " + descricao[i] + " | Valor: R$" + String.format("%.2f", valores[i]));
+                }
+            }           
+        }       
     
     public static class SimularEmprestimo {
         public Double jurosParcela = 0.02;
@@ -91,9 +106,10 @@ public class Desafio1_2 {
     
     
     public static void main(String[] args) {
-        ContaBancaria conta = new ContaBancaria(100.0,0.0);
-        ServicoCambio cambio = new ServicoCambio(5.32);
+        
         ExtratoBancario extrato = new ExtratoBancario(10);
+        ContaBancaria conta = new ContaBancaria(100.0,0.0,extrato);
+        ServicoCambio cambio = new ServicoCambio(5.32);
         SimularEmprestimo simulador = new SimularEmprestimo();
         
         
