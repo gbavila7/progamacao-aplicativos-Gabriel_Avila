@@ -76,16 +76,12 @@ public class Desafio1_2 {
         }
         
         public void imprimir() {
-            if (vazio()) {
-                System.out.println("\nNenhuma movimentação registrada.");
-            } else {
-                System.out.println("\n=== Extrato Bancário ===");
-                for (int j = 0; j < i; j++) {
-                    Movimentacao m = itens[j];
-                    System.out.println((j + 1) + " - " + m.texto + " | Valor: R$" + String.format("%.2f", m.valor));
-                }
-            }           
-        }       
+            for (int j = 0; j < i; j++) {
+                 Movimentacao m = itens[j];
+                System.out.println((j + 1) + " - " + m.texto + " | Valor: R$" + String.format("%.2f", m.valor));
+            }    
+        }               
+               
     }
         
     public static class SimularEmprestimo {
@@ -172,7 +168,19 @@ public class Desafio1_2 {
                     break;
 
                 case 3:
+                    if (extrato.vazio()) {
+                        System.out.println("\nNenhuma movimentação registrada.");
+                    } else {
+                        extrato.imprimir();
+                    }    
                     
+                    System.out.print("Deseja voltar ao menu (V) ou encerrar o programa (E)? ");
+                    voltar = entrada.nextLine().toUpperCase();
+                    
+                    if (voltar.equals("E")) {
+                        opcao = 0;
+                    }
+                    break;
            
                 case 4:
                     
