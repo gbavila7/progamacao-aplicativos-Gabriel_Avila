@@ -15,7 +15,7 @@ public class Desafio1_2 {
          
         public void depositar(Double valor) {
             saldo += valor;
-            extrato.registrar(new Movimentacao("Depósito", valor));
+            extrato.registrar(new Movimentacao("Depósito (+)", valor));
         }
         
         public void comprarDolar(Double qtdUsd, Double custoReais) {
@@ -122,6 +122,8 @@ public class Desafio1_2 {
         
         Scanner entrada = new Scanner(System.in);
         int opcao;
+        Double valor;
+        String voltar;
         
         do {
             System.out.println("\n===== CAIXA RÁPIDO =====\n");
@@ -142,7 +144,7 @@ public class Desafio1_2 {
                     System.out.println("Saldo em dólares: US$ " + conta.saldo_dolar);
                     
                     System.out.print("Deseja voltar ao menu (V) ou encerrar o programa (E)? ");
-                    String voltar = entrada.nextLine().toUpperCase();
+                    voltar = entrada.nextLine().toUpperCase();
 
                     if (voltar.equals("E")) {
                         opcao = 0;
@@ -150,7 +152,24 @@ public class Desafio1_2 {
                     break;
 
                 case 2:
+                    System.out.print("\nInforme o valor do depósito (em reais): R$ ");
+                    valor = entrada.nextDouble();
+                    entrada.nextLine();
                     
+                    if (valor <= 0.00 || valor > 5000.00) {
+                        System.out.println("O depósito deve ser maior que R$0,00 e até R$5.000,00.");
+                    }else{
+                        conta.depositar(valor);
+                        System.out.println("Depósito realizado com sucesso!");
+                    }    
+                    
+                    System.out.print("Deseja voltar ao menu (V) ou encerrar o programa (E)? ");
+                    voltar = entrada.nextLine().toUpperCase();
+                    
+                    if (voltar.equals("E")) {
+                        opcao = 0;
+                    }
+                    break;
 
                 case 3:
                     
