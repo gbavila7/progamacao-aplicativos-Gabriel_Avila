@@ -1,4 +1,5 @@
 package desafio1_2;
+import java.util.Scanner;
 
 public class Desafio1_2 {
     public static class ContaBancaria {
@@ -67,7 +68,8 @@ public class Desafio1_2 {
             if (i < capacidade) {
                 i++;
             }
-        }    
+        } 
+    }    
         
         public boolean vazio() {
             return i==0;
@@ -117,7 +119,43 @@ public class Desafio1_2 {
         ServicoCambio cambio = new ServicoCambio(5.32);
         SimularEmprestimo simulador = new SimularEmprestimo();
         
+        Scanner entrada = new Scanner(System.in);
         
+        do {
+            System.out.println("\n===== CAIXA RÁPIDO =====\n");
+            System.out.println("1 - Saldo");
+            System.out.println("2 - Depósito");
+            System.out.println("3 - Extrato");
+            System.out.println("4 - Simular Empréstimo");
+            System.out.println("5 - Comprar Dólar");
+            System.out.println("0 - Sair");
+
+            System.out.print("\nDigite uma opção: ");
+            int opcao = entrada.nextInt();
+            entrada.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    
+
+                case 2:
+                    
+
+                case 3:
+                    
+           
+                case 4:
+                    
+                
+                case 5:
+                    
+                    
+                case 0:
+                    System.out.println("Encerrando o atendimento. Obrigado por utilizar o Caixa rápido.");
+
+            }
+
+        } while (opcao != 0);
     }
     
 }
