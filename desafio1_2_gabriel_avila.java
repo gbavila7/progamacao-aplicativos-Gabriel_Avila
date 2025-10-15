@@ -208,10 +208,10 @@ public class Desafio1_2_gabriel_avila {
                         System.out.print("Quantidade de parcelas (6, 12, 18, 24, 30, 36, 40, 48, 56, 60 ou 72): ");
                         while (!entrada.hasNextInt()) {
                             System.out.println("Entrada inválida. Digite um número inteiro.");
-                            entrada.next(); // consome a entrada inválida
+                            entrada.next(); 
                         }
                         p = entrada.nextInt();
-                        entrada.nextLine(); // limpa buffer
+                        entrada.nextLine(); 
 
                         if (!simular.parcelaValida(p)) {
                             System.out.println("Número de parcelas inválido.");
@@ -295,4 +295,5 @@ public class Desafio1_2_gabriel_avila {
     }
     
 }
+
 
