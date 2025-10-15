@@ -44,12 +44,25 @@ public class Desafio1_2_gabriel_avila {
         public int capacidade;
         public int proximo;
         public int i; 
+        public Movimentacao[] itens;
         
     }
     
     public static class SimularEmprestimo {
         public Double jurosParcela = 0.02;
         public int[] permitidas = {6,12,18,24,30,36,40,48,56,60,72};
+        
+        public void parcelaValida (int p) {
+            
+        }
+        
+        public Double parcelaFinal (Double emprestimo, int qtd) {
+            return (emprestimo/qtd) * 0.2;
+        }
+        
+        public Double totalComJuros  (Double emprestimo, int qtd) {
+            return emprestimo + (jurosParcela*qtd);
+        }
     }
     
     
