@@ -52,8 +52,6 @@ public class Desafio1_2 {
         public int proximo;
         public int i; 
         public Movimentacao[] itens;
-        public String[] descricao;
-        public Double[] valores;
          
          public ExtratoBancario (int capacidade) {
              this.capacidade = capacidade;
@@ -80,8 +78,9 @@ public class Desafio1_2 {
                 System.out.println("\nNenhuma movimentação registrada.");
             } else {
                 System.out.println("\n=== Extrato Bancário ===");
-                for (int i = 0; i < capacidade; i++) {
-                    System.out.println((i + 1) + " - " + descricao[i] + " | Valor: R$" + String.format("%.2f", valores[i]));
+                for (int j = 0; i < i; j++) {
+                    Movimentacao m = itens[j];
+                    System.out.println((j + 1) + " - " + m.texto + " | Valor: R$" + String.format("%.2f", m.valor));
                 }
             }           
         }       
@@ -90,9 +89,15 @@ public class Desafio1_2 {
         public Double jurosParcela = 0.02;
         public int[] permitidas = {6,12,18,24,30,36,40,48,56,60,72};
         
-        public void parcelaValida (int p) {
-            
+        public boolean parcelaValida (int p) {
+            for (int parcela : permitidas) {
+                if (p == parcela) {
+                    return true;
+                }
+            }
+            return false;    
         }
+       
         
         public Double parcelaFinal (Double emprestimo, int qtd) {
             return (emprestimo/qtd) * 0.2;
