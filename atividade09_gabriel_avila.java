@@ -263,6 +263,41 @@ public class Atividade09_gabriel_avila {
             return true;
         }
     }*/
+    
+    //3
+    
+    /*public static class Tarefa {
+        private int id;
+        private String descricao;
+        private boolean concluida;
+
+        public Tarefa(int id, String descricao) {
+            this.id = id;
+            this.descricao = descricao;
+            this.concluida = false;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getDescricao() {
+            return descricao;
+        }
+
+        public boolean isConcluida() {
+            return concluida;
+        }
+
+        public void setConcluida(boolean concluida) {
+            this.concluida = concluida;
+        }
+
+        public void exibir() {
+            String status = concluida ? "CONCLUÍDA" : "PENDENTE";
+            System.out.println("[" + id + "] " + descricao + " - " + status);
+        }
+    }*/
 
     
     public static void main(String[] args) {
@@ -362,6 +397,95 @@ public class Atividade09_gabriel_avila {
             }
 
         } while (escolha != 3);*/
+        
+        //3
+        
+        /*Tarefa[] tarefas = new Tarefa[10];
+        int qtd_Tarefas = 0, opcao;
+        String descricao;
+
+        do {
+            System.out.println("\n=== LISTA DE TAREFAS TO-DO ===");
+            System.out.println("1 - Adicionar tarefa");
+            System.out.println("2 - Listar tarefas");
+            System.out.println("3 - Concluir tarefa");
+            System.out.println("4 - Sair");
+            System.out.print("Opção: ");
+
+            // Validação básica de entrada
+            while (!entrada.hasNextInt()) {
+                System.out.println("Digite um número válido.");
+                entrada.nextLine();
+                System.out.print("Opção: ");
+            }
+
+            opcao = entrada.nextInt();
+            entrada.nextLine(); 
+
+            switch (opcao) {
+                case 1:
+                    if (qtd_Tarefas < tarefas.length) {
+                        System.out.print("Descreva a tarefa: ");
+                        descricao = entrada.nextLine();
+                        tarefas[qtd_Tarefas] = new Tarefa(qtd_Tarefas + 1, descricao);
+                        System.out.println("Tarefa adicionada!");
+                        qtd_Tarefas++;
+                    } else {
+                        System.out.println("A lista está cheia!");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("\n=== LISTA DAS TAREFAS ===");
+                    if (qtd_Tarefas == 0) {
+                        System.out.println("Nenhuma tarefa adicionada ainda.");
+                    } else {
+                        for (int i = 0; i < qtd_Tarefas; i++) {
+                            tarefas[i].exibir();
+                        }
+                    }
+                    break;
+
+                case 3:
+                    System.out.print("Digite o ID da tarefa a concluir: ");
+                    if (!entrada.hasNextInt()) {
+                        System.out.println("ID inválido.");
+                        entrada.nextLine();
+                        break;
+                    }
+
+                    int id = entrada.nextInt();
+                    entrada.nextLine();
+
+                    boolean tarefaEncontrada = false;
+
+                    for (int i = 0; i < qtd_Tarefas; i++) {
+                        if (tarefas[i].getId() == id) {
+                            if (!tarefas[i].isConcluida()) {
+                                tarefas[i].setConcluida(true);
+                                System.out.println("Tarefa concluída!");
+                            } else {
+                                System.out.println("Tarefa já está concluída.");
+                            }
+                            tarefaEncontrada = true;
+                            break;
+                        }
+                    }
+
+                    if (!tarefaEncontrada) {
+                        System.out.println("Tarefa não encontrada!");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Encerrando programa...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+
+        } while (opcao != 4);*/
     }
     
 }
