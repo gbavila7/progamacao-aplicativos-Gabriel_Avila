@@ -2,7 +2,7 @@ package atividade09_gabriel_avila;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class atividade09_gabriel_avila {
+public class Atividade09_gabriel_avila {
     /*1
 
     public static class Contato {
@@ -161,4 +161,5 @@ public class atividade09_gabriel_avila {
     }
     
 }
+
 
