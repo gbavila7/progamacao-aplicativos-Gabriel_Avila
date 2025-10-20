@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class atividade09_gabriel_avila {
-    //1
+    /*1
 
     public static class Contato {
         private String nome;
@@ -125,11 +125,11 @@ public class atividade09_gabriel_avila {
             }
             System.out.println("Contato não encontrado!");
         }
-    }
+    }*/
 
     
     public static void main(String[] args) {
-        //1
+        /*1
         Scanner entrada = new Scanner(System.in);
         AgendaEletronica a = new AgendaEletronica();
         
@@ -157,7 +157,8 @@ public class atividade09_gabriel_avila {
                 default -> System.out.println("Opção inválida!");
             }
 
-        } while (opcao != 5);
+        } while (opcao != 5);*/
     }
     
 }
+
