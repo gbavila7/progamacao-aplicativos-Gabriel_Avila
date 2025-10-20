@@ -700,5 +700,3 @@ public class Atividade09_gabriel_avila {
         } while (opcao != 4);*/
     }
 }
-
-
