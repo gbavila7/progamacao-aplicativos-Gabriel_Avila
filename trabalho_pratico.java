@@ -72,17 +72,11 @@ public class Trabalho_pratico {
             return;
         }
 
-        System.out.print("Placa: ");
-        String placa = input.next();
-        System.out.print("Condutor: ");
-        input.nextLine();
-        String condutor = input.nextLine();
-        System.out.print("Marca: ");
-        String marca = input.nextLine();
-        System.out.print("Modelo: ");
-        String modelo = input.nextLine();
-        System.out.print("Cor: ");
-        String cor = input.nextLine();
+        String placa = lerTextoObrigatorio("Placa: ");
+        String condutor = lerTextoObrigatorio("Condutor: ");
+        String marca = lerTextoObrigatorio("Marca: ");
+        String modelo = lerTextoObrigatorio("Modelo: ");
+        String cor = lerTextoObrigatorio("Cor: ");
 
         int hora = lerHora("Hora de entrada (0-23): ");
         int minuto = lerMinuto("Minuto de entrada (0-59): ");
@@ -135,7 +129,6 @@ public class Trabalho_pratico {
         int minutosEntrada = veiculo.horaEntrada * 60 + veiculo.minutoEntrada;
         int minutosSaida = horaSaida * 60 + minutoSaida;
 
-        // Permite saída no dia seguinte
         if (minutosSaida < minutosEntrada) {
             minutosSaida += 24 * 60;
             System.out.println("(Saída no dia seguinte detectada)");
@@ -268,15 +261,26 @@ public class Trabalho_pratico {
         }
     }
 
+    static String lerTextoObrigatorio(String mensagem) {
+        while (true) {
+            System.out.print(mensagem);
+            String texto = input.nextLine().trim();
+            if (!texto.isEmpty()) {
+                return texto;
+            }
+            System.out.println("Os campos precisam estar preenchidos!");
+        }
+    }
+
     public static void main(String[] args) {
         int opcao;
         inicializarVagas();
 
         do {
             System.out.println("\n===== MENU INICIAL DO ESTACIONAMENTO =====");
-            System.out.println("1 - Registrar veículo em vaga");
+            System.out.println("1 - Registrar veículo");
             System.out.println("2 - Finalizar uso do veículo na vaga");
-            System.out.println("3 - Consultar disponibilidade de vagas");
+            System.out.println("3 - Consultar vagas");
             System.out.println("4 - Consultar saldo e histórico de pagamentos");
             System.out.println("0 - Sair");
             System.out.print("Digite a opção desejada: ");
