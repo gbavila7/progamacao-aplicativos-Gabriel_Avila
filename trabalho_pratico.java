@@ -43,7 +43,7 @@ public class Trabalho_pratico {
         }
     }
 
-    static Scanner input = new Scanner(System.in);
+    static Scanner entrada = new Scanner(System.in);
     static Veiculo[] vagas = new Veiculo[10];
     static Pagamento[] historico = new Pagamento[100];
     static int proxCodigo = 1;
@@ -230,9 +230,9 @@ public class Trabalho_pratico {
     static int lerHora(String mensagem) {
         while (true) {
             System.out.print(mensagem);
-            String entrada = input.nextLine().trim();
-            if (entrada.matches("\\d{1,2}")) {
-                int hora = Integer.parseInt(entrada);
+            String valorDigitado = entrada.nextLine().trim();
+            if (valorDigitado.matches("\\d{1,2}")) {
+                int hora = Integer.parseInt(valorDigitado);
                 if (hora >= 0 && hora <= 23) return hora;
             }
             System.out.println("Hora inválida! Digite um número entre 0 e 23 (máx. 2 dígitos).");
@@ -242,9 +242,9 @@ public class Trabalho_pratico {
     static int lerMinuto(String mensagem) {
         while (true) {
             System.out.print(mensagem);
-            String entrada = input.nextLine().trim();
-            if (entrada.matches("\\d{1,2}")) {
-                int minuto = Integer.parseInt(entrada);
+            String valorDigitado = entrada.nextLine().trim();
+            if (valorDigitado.matches("\\d{1,2}")) {
+                int minuto = Integer.parseInt(valorDigitado);
                 if (minuto >= 0 && minuto <= 59) return minuto;
             }
             System.out.println("Minuto inválido! Digite um número entre 0 e 59 (máx. 2 dígitos).");
@@ -254,7 +254,7 @@ public class Trabalho_pratico {
     static int lerInteiro() {
         while (true) {
             try {
-                return Integer.parseInt(input.nextLine());
+                return Integer.parseInt(entrada.nextLine());
             } catch (NumberFormatException e) {
                 System.out.print("Entrada inválida. Digite um número: ");
             }
@@ -264,9 +264,9 @@ public class Trabalho_pratico {
     static String lerTextoObrigatorio(String mensagem) {
         while (true) {
             System.out.print(mensagem);
-            String texto = input.nextLine().trim();
-            if (!texto.isEmpty()) {
-                return texto;
+            String valorDigitado = entrada.nextLine().trim();
+            if (!valorDigitado.isEmpty()) {
+                return valorDigitado;
             }
             System.out.println("Os campos precisam estar preenchidos!");
         }
