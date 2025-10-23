@@ -1,8 +1,8 @@
-package trabalho_pratico;
+package trabalho_pratico_gabriel_avila;
 
 import java.util.Scanner;
 
-public class Trabalho_pratico {
+public class Trabalho_pratico_gabriel_avila {
 
     public static class Veiculo {
         int codigo, tipo, horaEntrada, minutoEntrada, vaga;
@@ -298,4 +298,5 @@ public class Trabalho_pratico {
         } while (opcao != 0);
     }
 }
+
 
